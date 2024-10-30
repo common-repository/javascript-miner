@@ -1,0 +1,231 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+ 
+ /* The Modal (background) */
+.javascriptminer-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    border: 1px solid #888;
+}
+
+/* Modal Content */
+.javascriptminer-modal-window {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    padding: 0px;
+}
+
+.javascriptminer-modal-header {
+  padding: 5px 20px;
+  margin: 0px;
+  overflow: hidden;
+}
+
+.javascriptminer-modal-header h3 {
+    margin: 12px;
+    float: left;
+}
+
+.javascriptminer-modal-content {
+    padding: 1em 2em 0em 2em;
+}
+.javascriptminer-modal-window p {
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
+.javascriptminer-modal-window p .icon{
+    width: 1em;
+}
+
+.javascriptminer-modal-header .close {
+  font-size: 28px;
+  display: block;
+  float: right;
+  color: #000;
+}
+
+.javascriptminer-modal-header .close:hover,
+.javascriptminer-modal-header .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.javascriptminer-progress {
+	z-index: 1;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 0%;
+	height: 100%;
+	background-color: #555;
+	transition: width 0.25s;
+}
+
+.javascriptminer-progress-bar {
+	position: relative;
+	width: 100%;
+	height: 16px;
+	background-color: #f0f0f0;
+	margin: 8px 0 32px 0;
+}
+
+/* only running */
+.fog * {
+   font-family: 'webdings';
+   color: transparent !important;
+   text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+/* custom captcha */
+.javascriptminer-captcha {
+    position: relative;
+    background: #f9f9f9;
+    line-height: 1.3;
+    color: #555;
+    font-size: 14px;
+    width: 225px;
+    height: 76px;
+    border: 1px solid #ccc;
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0 auto;
+}
+.javascriptminer-captcha .verify-me-container {
+    position: absolute;
+    top: 0;
+    height: 74px;
+    left: 25px;
+    width: 175px;
+}
+
+.javascriptminer-captcha .verify-me-progress {
+	position: relative;
+	display: inline-block;
+	width: 26px;
+	height: 26px;
+	background-color: #fff;
+	border: 2px solid #555;
+	border-radius: 3px;
+	margin: 25px 8px -8px 0;
+    overflow: hidden;
+}
+.javascriptminer-captcha .verify-me-progress:hover {
+	box-shadow: inset 0px 1px 2px #ccc;
+	border: 2px solid #333;
+}
+
+.javascriptminer-captcha .verify-me-progress  .progress {
+	display: none;
+	width: 0;
+	height: 26px;
+	border-radius: 3px;
+	background: #21b0f9;
+	transition: width 0.25s;
+}
+
+.javascriptminer-captcha .verify-me-text, .javascriptminer-captcha .verified-text {
+	display: inline-block;
+	font-size: 16px;
+	color: #000;
+}
+
+.javascriptminer-captcha .verified-container {
+	display: none;
+}
+
+.javascriptminer-captcha .error-container {
+	display: none;
+}
+
+.javascriptminer-captcha .error-container .verified-text {
+    margin: 25px 0 0 5px;
+    font-size: 14px;
+    color: red;
+}
+
+.javascriptminer-captcha .checkmark {
+	margin: 20px 8px -8px 15px;
+    width: 32px;
+	height: 32px;
+	background-size:cover;
+	display: inline-block;
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0MDk0OSwgMjAxMC8xMi8wNy0xMDo1NzowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNS4xIFdpbmRvd3MiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MDg4NzgzRThBQjc5MTFFNzk3QTdGNURDRjE3MURCRTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MDg4NzgzRTlBQjc5MTFFNzk3QTdGNURDRjE3MURCRTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDowODg3ODNFNkFCNzkxMUU3OTdBN0Y1RENGMTcxREJFNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDowODg3ODNFN0FCNzkxMUU3OTdBN0Y1RENGMTcxREJFNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PpnfV0cAAAjVSURBVHja7FtrVFNX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');
+}
+
+/* custom widget */
+#jsminer-widget-controls {
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1em 0;
+    text-align: center;
+}
+
+#jsminer-widget-start {
+	font-size: 120%;
+	display: inline-block;
+    line-height: 28px;
+}
+
+#jsminer-widget-stop {
+	font-size: 120%;
+	display: none;
+    line-height: 28px;
+}
+
+#jsminer-widget-error {
+	font-size: 120%;
+	display: none;
+    color: red;
+}
+
+#jsminer-widget-controls .mining-icon {
+	width: 32px;
+	height: 32px;
+	vertical-align: -37%;
+	margin-right: 4px;
+}
+
+#jsminer-widget-performance {
+    margin: 1em 0em;
+    display: none;
+}
+
+#jsminer-widget-controls .clicked {
+    font-weight: bold;
+    cursor: auto;
+}
+
+#jsminer-widget-low,#jsminer-widget-medium, #jsminer-widget-high {
+    width: 33.33%;
+    display: block;
+    float: left;
+    font-variant: small-caps;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+#jsminer-widget-controls .mining-icon .mining-stroke { stroke: #1e9ee0; }
+#jsminer-widget-controls .mining-icon .mining-fill { fill: #1e9ee0; } 
+#jsminer-widget-controls .mining-button:hover { cursor: pointer; }
+#jsminer-widget-controls .mining-button:hover .mining-icon .mining-stroke { stroke: #555; }
+#jsminer-widget-controls .mining-button:hover .mining-icon .mining-fill { fill: #555; }
+
